@@ -74,7 +74,7 @@ module.exports = function(grunt){
       assets: {
 
         files: {
-          '<%= meta.package %>/js/<%= pkg.name %>.min.js': ['<%= meta.package %>/js/<%= pkg.name %>.debug.js']
+          '<%= meta.package %>/js/<%= pkg.name %>.<%= pkg.version %>.min.js': ['<%= meta.package %>/js/<%= pkg.name %>.debug.js']
         }
 
       }
@@ -113,7 +113,7 @@ module.exports = function(grunt){
 
         files: {
 
-          '<%= meta.package %>/styles/<%= pkg.name %>.min.css': '<%= source.styles %>'
+          '<%= meta.package %>/styles/<%= pkg.name %>.<%= pkg.version %>.min.css': '<%= source.styles %>'
 
         }
 
