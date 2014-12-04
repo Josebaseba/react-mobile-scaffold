@@ -1,6 +1,5 @@
 var React = require('react');
 var Header = require('./header');
-console.log(Header);
 
 var Demo = React.createClass({
 
