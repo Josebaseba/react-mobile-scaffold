@@ -97,22 +97,6 @@ module.exports = function(grunt){
           {expand: true, src: '<%= source.components_css %>', dest: '<%= meta.assets %>/styles/ratchet', filter: 'isFile', flatten: true}
         ]
 
-      },
-
-      test_components: {
-
-        files: [
-          {
-            expand: true,
-            src: [
-                  'bower_components/should/should.js',
-                  'bower_components/mocha/mocha.js',
-                  'bower_components/mocha/mocha.css'
-                  ],
-            dest: '<%= meta.test %>/lib', filter: 'isFile', flatten: true
-          }
-        ]
-
       }
 
     },
@@ -225,6 +209,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-banner');
 
   grunt.registerTask('default', ['browserify:dev', 'copy', 'uglify', 'cssmin', 'usebanner']);
-  grunt.registerTask('test', ['copy:test_components', 'browserify:test']);
+  grunt.registerTask('test', ['browserify:test']);
 
 };
