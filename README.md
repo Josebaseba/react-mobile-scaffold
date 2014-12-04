@@ -1,4 +1,4 @@
-mobile-scaffold
+mobile scaffold with react and browserify
 ===============
 
-The scaffold of a mobile project with ratchet and backbone
+FLUX scaffold of a mobile project with ratchet, backbone, react and browserify.
