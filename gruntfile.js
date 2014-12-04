@@ -21,9 +21,10 @@ module.exports = function(grunt){
       js: [
         '<%= meta.assets %>/js/*.js',
         '<%= meta.assets %>/js/utils/*.js',
-        '<%= meta.assets %>/js/models/*.js',
-        '<%= meta.assets %>/js/collections/*.js',
-        '<%= meta.assets %>/js/views/*.js',
+        '<%= meta.assets %>/js/stores/*.js',
+        '<%= meta.assets %>/js/dispatcher/*.js',
+        '<%= meta.assets %>/js/actions/*.js',
+        '<%= meta.assets %>/js/components/*.js',
         '<%= meta.assets %>/js/routers/*.js'
       ],
 
@@ -174,7 +175,7 @@ module.exports = function(grunt){
 
         options: {livereload: true},
         files: ['<%= source.js %>'],
-        tasks: ['browserify']
+        tasks: ['browserify', 'uglify', 'usebanner']
 
       },
 

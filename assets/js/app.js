@@ -1,18 +1,8 @@
-var _ = require('lodash');
+var React = require('react');
 
-var app = {
+var Demo = require('./utils/demo');
 
-    views       : {},
-    models      : {},
-    collections : {},
-    routers     : {},
-    utils       : {}
-
-};
-
-
-console.log('=========== APP ===========');
-console.log('===========================');
-console.log('APP:', app);
-console.log('===========================');
-console.log('========= LOADED ==========');
+React.render(
+  <Demo />,
+  document.getElementById('demo')
+);
