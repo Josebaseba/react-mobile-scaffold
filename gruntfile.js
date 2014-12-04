@@ -44,15 +44,26 @@ module.exports = function(grunt){
         'bower_components/ratchet/dist/css/ratchet-theme-android.css',
         'bower_components/ratchet/dist/css/ratchet-theme-ios.css',
         'bower_components/ratchet/dist/css/ratchet.css'
+      ],
+
+      test: [
+        '<%= meta.test %>/bdd/**.js',
+        '<%= meta.test %>/index.html'
       ]
 
     },
 
     browserify: {
-      app: {
+      dev: {
         src : '<%= meta.assets %>/js/app.js',
         dest: '<%= meta.package %>/js/<%= pkg.name %>.debug.js'
       },
+
+      test: {
+        src : '<%= meta.test %>/bdd/test.init.js',
+        dest: '<%= meta.test %>/js/tests.js'
+      },
+
       options: {
         transform: [require('grunt-react').browserify]
       }
@@ -175,7 +186,14 @@ module.exports = function(grunt){
 
         options: {livereload: true},
         files: ['<%= source.js %>'],
-        tasks: ['browserify', 'uglify', 'usebanner']
+        tasks: ['browserify:dev', 'uglify', 'usebanner']
+
+      },
+
+      test: {
+
+        files: ['<%= source.test %>'],
+        tasks: ['browserify:test',]
 
       },
 
@@ -206,7 +224,7 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-banner');
 
-  grunt.registerTask('default', ['browserify', 'copy', 'uglify', 'cssmin', 'usebanner']);
-  grunt.registerTask('test', ['copy:test_components']);
+  grunt.registerTask('default', ['browserify:dev', 'copy', 'uglify', 'cssmin', 'usebanner']);
+  grunt.registerTask('test', ['copy:test_components', 'browserify:test']);
 
 };

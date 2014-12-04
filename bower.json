@@ -15,9 +15,5 @@
   ],
   "dependencies": {
     "ratchet": "~2.0.2"
-  },
-  "devDependencies": {
-    "mocha": "~1.21.4",
-    "should": "~3.3.1"
   }
 }

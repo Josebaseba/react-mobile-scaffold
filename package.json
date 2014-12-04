@@ -18,6 +18,8 @@
     "grunt-react": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-browserify": "*"
+    "grunt-browserify": "*",
+    "mocha"  : "*",
+    "should" : "*"
   }
 }
