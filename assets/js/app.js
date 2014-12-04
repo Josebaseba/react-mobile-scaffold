@@ -1,10 +1,8 @@
 var React = require('react');
 
-var Demo = require('./utils/demo');
-
-console.log('...');
+var Demo = require('./components/demo');
 
 React.render(
   <Demo />,
-  document.getElementById('demo')
+  document.getElementById('main')
 );
